@@ -9,6 +9,7 @@
       <p class="mx-auto my-4 max-w-xl text-lg leading-8 text-gray-300">N + 1 query problem</p>
       <div>
         <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <%# TODO(02) : <READ-ONLY> : We are looping through all the users to display in UI. %>
           <% @users.each do |user| %>
             <li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
               <div class="flex w-full items-center justify-between space-x-6 p-6">
@@ -22,6 +23,10 @@
                 <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
               </div>
               <div class="grid grid-cols-2 py-2">
+                <%# TODO(03) : <READ-ONLY> : We are looping through all the hobbies to display in UI. %>
+                <%# TODO(04) : <READ-ONLY> : This is N+1 query problem, because we are making additial
+                  transaction to database to fetch hobbies for the user.
+                %>
                 <% user.hobbies.each do |hobby| %>
                   <div class="mx-2 my-2 flex items-center justify-center">
                     <div class="w-full rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5">
